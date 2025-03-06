@@ -1,0 +1,79 @@
+<!--
+<h1>{{title}} </h1>
+
+<label>Search</label>
+<input type="text" [(ngModel)]="priceSearch">
+<table border="1">
+    <tr>
+        <th> ID </th>
+        <th> title </th>
+        <th> price </th>
+        <th> quantity </th>
+        <th> like </th>
+        <th> image </th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let p of products , let i = index">
+        <div *ngIf="p.price >= priceSearch || priceSearch == null">
+            <td> {{p.id}}</td>
+            <td> {{p.title}}</td>
+            <td> {{p.price}}</td>
+            <td> {{p.quantity}}</td>
+            <td> {{p.like}}</td>
+            <td> <img src="{{p.image}}" alt="product" width="100" height="100"></td>
+            <td>
+                <button (click)="like(p)">like</button>
+                <button [disabled]="p.quantity==0" (click)="buy(p)">buy</button>
+            </td>
+        </div>
+    </tr>
+</table>
+
+<input class="form-control" type="text" [(ngModel)]="color" placeholder="color">
+<p [style.backgroundColor]="color">propertyBinding</p>
+
+
+<button class="btn btn-outline-primary" (click)="show()"> save</button>
+
+
+-->
+
+
+<!-- Bouton Ajouter un produit -->
+<div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-success" [routerLink]="['/addProduct']">
+      <i class="bi bi-plus-circle"></i> Ajouter un produit
+  </button>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div *ngFor="let p of products" class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img class="card-img-top" [src]="p.image" alt="{{ p.title }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ p.title }}</h5>
+                    <p class="card-text">
+                        <span class="badge bg-success">Price: {{ p.price }}$</span>
+                    </p>
+                    <p class="card-text">
+                        <span class="badge bg-warning">Quantity: {{ p.quantity }}</span>
+                    </p>
+                    <p class="card-text">
+                        <span class="badge bg-info"><i class="bi bi-heart-fill"></i> {{ p.like }}</span>
+                    </p>
+                    <button (click)="like(p)" class="btn btn-outline-danger me-2">
+                    <i class="bi bi-hand-thumbs-up-fill"></i> Like
+                </button>
+                    <button [disabled]="p.quantity == 0" (click)="buy(p)" class="btn btn-outline-primary">
+                    <i class="bi bi-cart-fill"></i> Buy
+                </button>
+
+                    <button class="btn btn-outline-info" [routerLink]="['/detailProd',p.id]">
+                  <i class="bi bi-cart-fill"></i> detail
+              </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

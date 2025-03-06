@@ -1,0 +1,50 @@
+<label>username</label>
+
+<input class="form-control" type="text" [formControl]="username">
+
+
+<label>Mot de passe</label>
+
+<input class="form-control" type="text" [formControl]="pwd">
+
+
+<button class="btn btn-dark" [disabled]="this.username.invalid ||this.pwd.invalid" (click)="verifier()">  save</button>
+
+<h1>Form Group</h1>
+
+<form [formGroup]="loginForm">
+    <label>username</label>
+    <input class="form-control" type="text" formControlName="username" placeholder="username">
+
+    <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched" class="alert alert-danger">
+        <p *ngIf="loginForm.controls['username'].hasError('required')">username obligatoire</p>
+        <p *ngIf="loginForm.controls['username'].hasError('minlength')">username doit contenir au minimum 3 caracteres</p>
+    </div>
+
+    <label>Mot de passe</label>
+    <input class="form-control" type="password" formControlName="pwd" placeholder="password">
+
+
+    <div *ngIf="loginForm.controls['pwd'].invalid && loginForm.controls['pwd'].touched" class="alert alert-danger">
+        password obligatoire & password doit avoir min et maj et un chiffre
+    </div>
+    <label>cin</label>
+    <input class="form-control" type="text" formControlName="cin" placeholder="cin">
+    <div *ngIf="loginForm.controls['cin'].invalid && loginForm.controls['cin'].touched" class="alert alert-danger">
+        cin obligatoire & cin doit etre 8 chiffres
+    </div>
+    <label>email</label>
+    <input class="form-control" type="text" formControlName="email" placeholder="email">
+    <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="alert alert-danger">
+        email obligatoire & doit respecter les normes
+    </div>
+    <label>tel</label>
+    <input class="form-control" type="text" formControlName="tel" placeholder="tel">
+    <div *ngIf="loginForm.controls['tel'].invalid && loginForm.controls['tel'].touched" class="alert alert-danger">
+        tel obligatoire
+    </div>
+
+    <button class="btn btn-dark" [disabled]="this.loginForm.invalid" (click)="verifier()">  save</button
+>
+
+</form>

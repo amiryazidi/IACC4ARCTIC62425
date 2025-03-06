@@ -1,0 +1,27 @@
+
+
+
+<div class="container mt-4">
+
+
+
+<button routerLink="/AddRes" class="btn btn-secondary">
+  <i class="fas fa-plus"></i> Add Residence
+</button>
+
+    <h3 class="text-center mb-4">Résidences</h3>
+    <div class="row">
+        <div *ngFor="let r of listResidences" class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img class="card-img-top" [src]="r.image" alt="{{ r.name }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ r.name }}</h5>
+                    <p class="card-text">
+                        {{ r.status }}
+                    </p>
+                    <button class="btn btn-info"  [routerLink]="['/detailRes',r.id]" >detail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

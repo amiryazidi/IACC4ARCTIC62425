@@ -1,0 +1,40 @@
+{
+  "residences": [
+    {
+      "id": "1",
+      "name": "el fel",
+      "address": "a title",
+      "image": "../../assets/images/R1.jpg",
+      "status": "available"
+    },
+    {
+      "id": "2",
+      "name": "el amen",
+      "address": "another title",
+      "image": "../../assets/images/R1.jpg",
+      "status": "available"
+    },
+    {
+      "id": "7a15",
+      "name": "test",
+      "address": "esprit",
+      "image": "ttttt",
+      "status": "Occupée"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
