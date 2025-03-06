@@ -20,6 +20,8 @@
                         {{ r.status }}
                     </p>
                     <button class="btn btn-info"  [routerLink]="['/detailRes',r.id]" >detail</button>
+                    <button class="btn btn-danger"  (click)="supp(r.id)">Delete</button>
+                    <button class="btn btn-succes"  [routerLink]="['/AddRes',r.id]">update</button>
                 </div>
             </div>
         </div>

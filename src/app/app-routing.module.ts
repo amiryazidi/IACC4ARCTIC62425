@@ -15,6 +15,7 @@ const routes: Routes = [
   {path : '' , redirectTo : 'products' , pathMatch : 'full'},
   {path:'residence' , component:ResidenceComponent},
   {path:'AddRes' , component:FormResidenceComponent},
+  {path:'AddRes/:id' , component:FormResidenceComponent},
   {path:'detailRes/:id' , component:DetailResComponent},
   {path:'detailProd/:id' , component:DetailProdComponent},
   {path:'login' , component:LoginComponent},

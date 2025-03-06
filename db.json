@@ -15,11 +15,11 @@
       "status": "available"
     },
     {
-      "id": "7a15",
       "name": "test",
-      "address": "esprit",
-      "image": "ttttt",
-      "status": "Occupée"
+      "address": "ariana",
+      "image": "../../assets/images/R2.jpg",
+      "status": "Disponible",
+      "id": "dc10"
     }
   ],
   "comments": [

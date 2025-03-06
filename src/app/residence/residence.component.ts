@@ -20,6 +20,12 @@ export class ResidenceComponent {
     )
   }
 
+  supp(id:number){
+    this.rs.DeleteResidence(id).subscribe(
+      ()=>this.ngOnInit()
+    )
+  }
+
  /*   {id:1,"name": "El fel","address":"Borj Cedria",
     "image":"../../assets/images/R1.jpg", status: "Disponible"},
     {id:2,"name": "El yasmine",
